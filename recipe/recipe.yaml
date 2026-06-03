@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.0.12"
+  version: "0.0.13"
   python_min: "3.10"
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/v/vmec-jax/vmec_jax-${{ version }}.tar.gz
-  sha256: a5ff97228bac7fe9568a53cc6f0bcb935d9420ec6044949bcd59786d11ae4bb7
+  sha256: 3fc6acfcc8db598f2fcbe281801ec20be8a3ef9b6c61762bf24f3a7b09a9cabd
 
 build:
   number: 0
@@ -31,6 +31,8 @@ requirements:
     - numpy
     - jax
     - netcdf4
+    - matplotlib-base
+    - booz-xform-jax >=0.1.1
     # python < 3.11
     - tomli
 
