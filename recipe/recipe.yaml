@@ -18,6 +18,8 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
+      - vmec = vmec_jax.cli:main
+      - vmec-jax = vmec_jax.cli:main
       - vmec_jax = vmec_jax.cli:main
       - xvmec_jax = vmec_jax.cli:main
 
@@ -29,10 +31,12 @@ requirements:
   run:
     - python >=${{ python_min }}
     - numpy
+    - scipy
     - jax
     - netcdf4
     - matplotlib-base
     - booz-xform-jax >=0.1.1
+    - packaging
     # python < 3.11
     - tomli
 
@@ -45,6 +49,8 @@ tests:
         - ${{ python_min }}.*
         - "*"
   - script:
+      - vmec --help
+      - vmec-jax --help
       - vmec_jax --help
       - xvmec_jax --help
 
