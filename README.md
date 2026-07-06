@@ -7,7 +7,7 @@ Home: https://vmec-jax.readthedocs.io/
 
 Package license: MIT
 
-Summary: End-to-end differentiable JAX implementation of VMEC2000 for fixed and free-boundary equilibria
+Summary: JAX implementation of VMEC2000 with differentiable fixed-boundary and branch-local free-boundary research paths
 
 Development: https://github.com/uwplasma/vmec_jax
 
