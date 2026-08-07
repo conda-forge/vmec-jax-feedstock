@@ -18,10 +18,8 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
-      - vmec = vmec_jax.cli:main
-      - vmec-jax = vmec_jax.cli:main
-      - vmec_jax = vmec_jax.cli:main
-      - xvmec_jax = vmec_jax.cli:main
+      - vmec = vmec_jax.core.cli:main
+      - vmec-jax = vmec_jax.core.cli:main
 
 requirements:
   host:
@@ -36,6 +34,7 @@ requirements:
     - netcdf4
     - matplotlib-base
     - booz-xform-jax >=0.1.1
+    - solvax
     - packaging
     # python < 3.11
     - tomli
@@ -51,8 +50,6 @@ tests:
   - script:
       - vmec --help
       - vmec-jax --help
-      - vmec_jax --help
-      - xvmec_jax --help
 
 about:
   summary: JAX implementation of VMEC2000 with differentiable fixed-boundary and branch-local free-boundary research paths
